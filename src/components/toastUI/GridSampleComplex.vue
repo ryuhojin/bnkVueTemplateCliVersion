@@ -2,10 +2,10 @@
     <grid ref="tuiGrid" :data="gridProps.data" :columns="gridProps.columns" :options="gridProps.options" :theme="gridProps.theme"></grid>
 </template>
 <script>
-import { gridData } from '@/mixins/gridData' //mixin
+import { gridCommonData } from '@/mixins/gridCommonData' //mixin
 import config from '@/config' //공통 설정
 export default {
-    mixins:[gridData],
+    mixins:[gridCommonData],
     data:() => ({
         url:config.API_URL+'/gridTest',
         columns: [

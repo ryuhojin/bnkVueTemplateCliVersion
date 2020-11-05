@@ -4,16 +4,11 @@ import auth from '@/api/modules/auth'
 Vue.use(Router)
 
 const routes = [
-  //{
-  //   path: '/pms/Project',
-  //   name: 'ProjectManagementView',
-  //   component: () => import(/* webpackChunkName: "common" */ '@/views/ProjectManagementView')
-  // },
-  // {
-  //   path: '/admin/User',
-  //   name: 'UserManagementView',
-  //   component: () => import(/* webpackChunkName: "common" */ '@/views/UserManagementView')
-  // } 
+  {
+    path: '/',
+    name: 'TestPage',
+    component: () => import(/* webpackChunkName: "common" */ '@/views/TestPage')
+  }
 ]
 
 export default new Router({
@@ -33,3 +28,8 @@ function beforeEnter(to,from,next){
     
   })
 }
+
+/**
+ * TODO: 권한 및 통계처리를 위한 코드추가
+ * 화면전환시 로딩화면 스택 처리 고려
+ */

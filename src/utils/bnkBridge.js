@@ -8,6 +8,8 @@
 
 import router from '@/router'
 import store from '@/store'
+const _import = require('@/router/_import_')
+
 var bnkBridge = {
 	API_URL:'',
     /**
@@ -52,13 +54,45 @@ var bnkBridge = {
      */
     requestFromNative(command,params){
 		switch(command){
+			case "DO_WEB_BACK":
+				window.history.back();
+				break;
+			case "ERROR":
+				console.log(params.error)
+				console.log(params.log)
+				break;
 			case "SET_SHARED_DATA":
-				setSharedData(params);
+				bnkBridge.setSharedData(params);
 				break;
 			case "GET_SHARED_DATA":
-				requestFromWebView("GET_SHARED_DATA",getSharedData());
+				bnkBridge.requestFromWebView("GET_SHARED_DATA",bnkBridge.getSharedData());
 				break;
+			case "INIT_DATA":
+				/**
+				 * TODO: APPLICATION 초기데이터 (로그인 후 메뉴 및 사용자 정보 설정) --> 추후 잘 되는지 테스트 필요
+				 */ 
+				bnkBridge.setMenu(params.menu)
+				bnkBridge.setUserData(params.user)
+				break;
+
 		}
+	},
+	/**
+	 * @name setMenu 
+	 * @param {*} params 
+	 * @description 라우터 동적 생성
+	 */
+	setMenu(params){
+		var { routes } = router.options
+		routes.push({ name: params.name, path: params.path, component: _import(params.filePath), meta: { title: params.name }})
+	},
+	/**
+	 * @name setUserData 
+	 * @param {*} params 
+	 * @description 사용자 정보 저장
+	 */
+	setUserData(params){
+		store.dispatch('SET_USER_DATA',params);
 	},
 	/**
 	 * @name setSharedData 웹,네이티브 공통 데이터 저장소(refresh시에 초기화) 셋팅

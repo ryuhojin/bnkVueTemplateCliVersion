@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import { gridData } from '@/mixins/gridData' //mixin
+import { gridCommonData } from '@/mixins/gridCommonData' //mixin
 import config from '@/config' //공통 설정
 import '@/utils/validation' //validation
 
 export default {
-    mixins:[ gridData ] ,
-    data:() => ({
+    mixins:[ gridCommonData ] ,
+    data: () => ({
         title : '',
         url:config.API_URL+'/gridTest',
         columns: [
