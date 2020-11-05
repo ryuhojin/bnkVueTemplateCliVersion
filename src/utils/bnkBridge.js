@@ -38,7 +38,7 @@ var bnkBridge = {
 				window.bnkBridge.requestFromWebView(_requestCommandJsonString);
 				break;
 			case "iOS":
-				//IOS Bridge
+				window.webkit.messageHandlers.bnkBridge.postMessage(_requestCommandJsonString);
 				break;
 			default :
 				console.log("지원하지 앟는 디바이스 입니다");
