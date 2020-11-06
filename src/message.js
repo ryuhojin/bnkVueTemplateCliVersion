@@ -10,4 +10,5 @@ export default Object.freeze({
     VALID_PASSWORD_MIDDLE: '비밀번호는 대소문자, 숫자를 포함한 8~14 자리',
     VALID_PASSWORD_HIGH: '비밀번호는 대소문자, 툭수문자, 숫자를 포함한 8~14 자리',
     SERVER_ERROR: '서버와의 통신이 원활하지 않습니다.'
+    
 });

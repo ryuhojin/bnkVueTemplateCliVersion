@@ -43,7 +43,7 @@ var bnkBridge = {
 				window.webkit.messageHandlers.bnkBridge.postMessage(_requestCommandJsonString);
 				break;
 			default :
-				console.log("지원하지 앟는 디바이스 입니다");
+				console.log("지원하지 않는 디바이스 입니다");
 				break;
 		}
     },
@@ -67,13 +67,16 @@ var bnkBridge = {
 			case "GET_SHARED_DATA":
 				bnkBridge.requestFromWebView("GET_SHARED_DATA",bnkBridge.getSharedData());
 				break;
-			case "INIT_DATA":
+			case "AFTER_LOGIN_DATA":
 				/**
 				 * TODO: APPLICATION 초기데이터 (로그인 후 메뉴 및 사용자 정보 설정) --> 추후 잘 되는지 테스트 필요
-				 */ 
+				*/ 
 				bnkBridge.setMenu(params.menu)
 				bnkBridge.setUserData(params.user)
 				break;
+			case "BEFORE_LOGIN_DATA":
+				bnkBridge.setMenu(params.menu)
+
 
 		}
 	},

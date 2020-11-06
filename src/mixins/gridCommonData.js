@@ -1,6 +1,6 @@
 import { Grid } from '@toast-ui/vue-grid';
 
-export const gridData = {
+export const gridCommonData = {
     data:() => ({
         theme: 'clean',
         options: {

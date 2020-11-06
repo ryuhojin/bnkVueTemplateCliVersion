@@ -77,7 +77,7 @@ var formatter = {
      */
     formatUseNotSpecialCharacters(value) {
         if(!value) return value
-        return value.replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi,'')
+        return value.replace(/[^(\s가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9)]/gi,'')
     },
     
     /**

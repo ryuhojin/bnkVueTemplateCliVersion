@@ -6,7 +6,7 @@ const bnkApi = axios.create({
     baseURL: config.API_URL,
     timeout: 4000
 })
-// instance.defaults.headers.common['Authorization'] = AUTH_TOKEN; .헤더에 뭐집어넣고 싶을떄
+// bnkApi.defaults.headers.common['Authorization'] = AUTH_TOKEN; .헤더에 뭐집어넣고 싶을떄
 
 bnkApi.interceptors.request.use(config => {
     bnkBridge.requestFromWebView("START_LOADING");

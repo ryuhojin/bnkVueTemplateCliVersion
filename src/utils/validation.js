@@ -92,7 +92,7 @@ extend('number', {
 
 extend('normal', {
     validate: value => {
-        return /^[\s|ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$/.test(value);
+        return /^[\s|ㄱ-ㅎ|가-힣|a-z|A-Z|0-9]+$/.test(value);
     },
     message: commonMessage.VALID_NOMRAL
 })

@@ -14,7 +14,23 @@ var common = {
         let _scrollPosition = window.scrollY || document.documentElement.scrollTop;
         let _docHeight = document.documentElement.scrollHeight
         return _scrollPosition + window.innerHeight >= _docHeight-50 ? true : false
-    },300)
+    },300),
+    startLoading: function(){
+        if(this.$store.getters.getLoadingData() === 0)
+        {
+            bnkBridge.requestFromWebView("START_LOADING");
+        }
+        this.$store.dispatch('ADD_LOADING_STACK');
+    },
+    endloading: function(){
+        this.$store.dispatch('SUB_LOADING_STACK');
+        if(this.$store.getters.getLoadingData() === 0)
+        {
+            bnkBridge.requestFromWebView("END_LOADING");
+        }
+    }
+
+
 }
 
 export default common;
