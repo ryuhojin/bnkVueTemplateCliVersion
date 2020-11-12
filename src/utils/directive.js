@@ -24,7 +24,7 @@ Vue.directive('focus',{
 
 Vue.directive('date',{
     bind: function(el) {
-        if (el.maxLength === -1) el.maxLength = '8';
+        if (el.maxLength === -1) el.maxLength = '10';
     },
     inserted: function(el){
         el.value = formatter.formatDate(el.value);
@@ -33,6 +33,8 @@ Vue.directive('date',{
         el.value = formatter.formatDate(el.value);
     }
 })
+
+
 
 Vue.directive('age',{
     bind: function(el) {

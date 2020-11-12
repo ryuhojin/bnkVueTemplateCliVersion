@@ -58,8 +58,6 @@ var bnkBridge = {
 				window.history.back();
 				break;
 			case "ERROR":
-				console.log(params.error)
-				console.log(params.log)
 				break;
 			case "SET_SHARED_DATA":
 				bnkBridge.setSharedData(params);

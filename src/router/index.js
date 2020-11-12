@@ -7,7 +7,12 @@ const routes = [
   {
     path: '/',
     name: 'TestPage',
-    component: () => import(/* webpackChunkName: "common" */ '@/views/TestPage')
+    component: () => import(/* webpackChunkName: "common" */ '@/views/test/TestPage')
+  },
+  {
+    path: '/modal',
+    name: 'ModalPage',
+    component: () => import(/* webpackChunkName: "common" */ '@/views/test/ModalPage')
   },
   {
     path: '/chart',
@@ -15,9 +20,19 @@ const routes = [
     component: () => import(/* webpackChunkName: "common" */ '@/views/chart/ChartJSPage')
   },
   {
-    path: '/grid',
-    name: 'ToastUiGridPage',
-    component: () => import(/* webpackChunkName: "common" */ '@/views/grid/ToastUiGridPage')
+    path: '/finance/exchangeRate',
+    name: 'ExchangeRatePage',
+    component: () => import(/* webpackChunkName: "common" */ '@/views/finance/ExchangeRatePage')
+  },
+  {
+    path: '/finance/foreignInterest',
+    name: 'ForeignInterestRatePage',
+    component: () => import(/* webpackChunkName: "common" */ '@/views/finance/ForeignInterestRatePage')
+  },
+  {
+    path: '/finance/wonInterest',
+    name: 'WonInterestRatePage',
+    component: () => import(/* webpackChunkName: "common" */ '@/views/finance/WonInterestRatePage')
   }
 ]
 
