@@ -28,11 +28,9 @@ var bnkBridge = {
 			'params':params,
 			'success':isReqeustSuccess,
 			'fail':isReqeustFailed
-			
 		}
 		
-		let _requestCommandJsonString = JSON.stringify(_funcObject);
-		
+		let _requestCommandJsonString = JSON.stringify(_funcObject);	
 		let _kindOfDevice = bnkBridge.checkConnectedOS();
 		
 		switch(_kindOfDevice){

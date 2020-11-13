@@ -6,7 +6,7 @@ import store from '@/store'
 import 'tui-grid/dist/tui-grid.css'; //TOAST UI GRID 관련 CSS
 import '@/assets/css/tui-pagination.css' //TOAST UI PAGINATION 관련 CSS
 import '@/utils/directive'; //커스텀 DIRECTIVE 
-
+import 'babel-polyfill'
 Vue.config.productionTip = false
 
 import { ValidationProvider } from 'vee-validate';
