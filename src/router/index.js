@@ -33,6 +33,11 @@ const routes = [
     path: '/finance/wonInterest',
     name: 'WonInterestRatePage',
     component: () => import(/* webpackChunkName: "common" */ '@/views/finance/WonInterestRatePage')
+  },
+  {
+    path: '/contact',
+    name: 'ContactListPage',
+    component: () => import(/* webpackChunkName: "common" */ '@/views/contact/ContactListPage')
   }
 ]
 
